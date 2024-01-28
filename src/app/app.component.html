@@ -1,0 +1,50 @@
+<!-- Submit Sound PLayer -->
+<audio #submitPlayer src="https://api.namitoyokota.com/assets/sounds/submit.wav"></audio>
+
+<!-- Completion Sound Player -->
+<audio #completePlayer src="https://api.namitoyokota.com/assets/sounds/complete.mp3"></audio>
+
+<!-- Header -->
+<div class="header-pane">
+    <div class="logo-pane">
+        <span class="logo-title">Thumbnail Exporter</span>
+        <span class="logo-subtitle">Text to blog thumbnail image</span>
+    </div>
+</div>
+
+<!-- Main -->
+<div class="main-pane">
+    <!-- New Task -->
+    <div class="add-pane">
+        <mono-input
+            placeholder="Add a new task"
+            [text]="newTask"
+            [dark]="true"
+            (changed)="newTask = $event"
+            (searched)="submit()"
+        ></mono-input>
+        <mono-button text="Submit" [dark]="true" [disabled]="!newTask.length" (clicked)="submit()"></mono-button>
+    </div>
+
+    <!-- Tasks -->
+    <div class="card-list" *ngIf="!isLoading">
+        <div class="card" [@fadeOutLeftBigOnLeave] *ngFor="let task of tasks">
+            <span>
+                {{ task }}
+            </span>
+            <div class="complete">
+                <i class="complete-icon fa-solid fa-check fa-lg" (click)="complete(task)"></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- Codebase Link -->
+    <div class="codebase-pane">
+        <a href="https://www.github.com/namitoyokota/thumbnail-exporter" target="_blank">GitHub</a>
+    </div>
+
+    <!-- Loading Indicator -->
+    <div class="loading-pane" *ngIf="isLoading">
+        <mono-spinner></mono-spinner>
+    </div>
+</div>
