@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { fadeOutLeftBigOnLeaveAnimation } from 'angular-animations';
 import { ExportAsConfig, ExportAsService } from 'ngx-export-as';
 
@@ -9,6 +9,9 @@ import { ExportAsConfig, ExportAsService } from 'ngx-export-as';
     animations: [fadeOutLeftBigOnLeaveAnimation()],
 })
 export class AppComponent {
+    /** Reference to the thumbnail element */
+    @ViewChild('thumbnailRef') thumbnailRef: ElementRef;
+
     /** Thumbnail title to set preview */
     title = '';
 
@@ -28,8 +31,27 @@ export class AppComponent {
      */
     export(): void {
         this.isLoading = true;
-        this.exportAsService.save(this.exportAsConfig, 'Thumbnail').subscribe(() => {
-            this.isLoading = false;
-        });
+        this.prepareThumbnail();
+        this.exportAsService.save(this.exportAsConfig, 'Thumbnail').subscribe(() => {});
+        this.resetThumbnail();
+        this.isLoading = false;
+    }
+
+    /**
+     * Update styling to prepare thumbnail
+     */
+    private prepareThumbnail(): void {
+        this.thumbnailRef.nativeElement.style.height = '1260px';
+        this.thumbnailRef.nativeElement.style.width = '2400px';
+        this.thumbnailRef.nativeElement.style.fontSize = '250px';
+    }
+
+    /**
+     * Reset styling to prepare thumbnail
+     */
+    private resetThumbnail(): void {
+        this.thumbnailRef.nativeElement.style.height = '';
+        this.thumbnailRef.nativeElement.style.width = '';
+        this.thumbnailRef.nativeElement.style.fontSize = '30px';
     }
 }

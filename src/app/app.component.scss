@@ -1,8 +1,7 @@
 :host {
     height: 100%;
     width: 100%;
-    max-width: 840px;
-
+    max-width: 500px;
     display: grid;
     grid-template-rows: min-content auto;
     row-gap: 20px;
@@ -44,12 +43,11 @@
         padding: 50px;
 
         &--text {
-            height: 84px;
-            width: 160px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: #fff;
+            font-size: 30px;
             background-color: #000;
         }
     }

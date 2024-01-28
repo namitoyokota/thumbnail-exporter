@@ -11,9 +11,14 @@
     <!-- New Task -->
     <mono-input placeholder="Add a new task" [text]="title" [dark]="true" (changed)="title = $event"></mono-input>
 
+    <!-- Loading Indicator -->
+    <div *ngIf="isLoading" class="loading-pane">
+        <mono-spinner></mono-spinner>
+    </div>
+
     <!-- Preview -->
-    <div class="preview-pane">
-        <span id="thumbnail" class="preview-pane--text">
+    <div *ngIf="!isLoading" class="preview-pane">
+        <span id="thumbnail" #thumbnailRef class="preview-pane--text">
             {{ title }}
         </span>
     </div>
@@ -24,10 +29,5 @@
     <!-- Codebase Link -->
     <div class="codebase-pane">
         <a href="https://www.github.com/namitoyokota/thumbnail-exporter" target="_blank">GitHub</a>
-    </div>
-
-    <!-- Loading Indicator -->
-    <div class="loading-pane" *ngIf="isLoading">
-        <mono-spinner></mono-spinner>
     </div>
 </div>
