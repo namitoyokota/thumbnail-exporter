@@ -1,9 +1,3 @@
-<!-- Submit Sound PLayer -->
-<audio #submitPlayer src="https://api.namitoyokota.com/assets/sounds/submit.wav"></audio>
-
-<!-- Completion Sound Player -->
-<audio #completePlayer src="https://api.namitoyokota.com/assets/sounds/complete.mp3"></audio>
-
 <!-- Header -->
 <div class="header-pane">
     <div class="logo-pane">
@@ -15,28 +9,17 @@
 <!-- Main -->
 <div class="main-pane">
     <!-- New Task -->
-    <div class="add-pane">
-        <mono-input
-            placeholder="Add a new task"
-            [text]="newTask"
-            [dark]="true"
-            (changed)="newTask = $event"
-            (searched)="submit()"
-        ></mono-input>
-        <mono-button text="Submit" [dark]="true" [disabled]="!newTask.length" (clicked)="submit()"></mono-button>
+    <mono-input placeholder="Add a new task" [text]="title" [dark]="true" (changed)="title = $event"></mono-input>
+
+    <!-- Preview -->
+    <div class="preview-pane">
+        <span id="thumbnail" class="preview-pane--text">
+            {{ title }}
+        </span>
     </div>
 
-    <!-- Tasks -->
-    <div class="card-list" *ngIf="!isLoading">
-        <div class="card" [@fadeOutLeftBigOnLeave] *ngFor="let task of tasks">
-            <span>
-                {{ task }}
-            </span>
-            <div class="complete">
-                <i class="complete-icon fa-solid fa-check fa-lg" (click)="complete(task)"></i>
-            </div>
-        </div>
-    </div>
+    <!-- Export -->
+    <mono-button text="Export" [dark]="true" [disabled]="!title.length" (clicked)="export()"></mono-button>
 
     <!-- Codebase Link -->
     <div class="codebase-pane">

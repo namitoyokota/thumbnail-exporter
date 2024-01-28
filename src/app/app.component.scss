@@ -1,7 +1,7 @@
 :host {
     height: 100%;
     width: 100%;
-    max-width: 500px;
+    max-width: 840px;
 
     display: grid;
     grid-template-rows: min-content auto;
@@ -37,35 +37,20 @@
     grid-template-rows: min-content auto min-content;
     row-gap: 20px;
 
-    .add-pane {
-        display: grid;
-        grid-template-columns: auto 80px;
-        column-gap: 10px;
-    }
-
-    .card-list {
+    .preview-pane {
         display: flex;
-        flex-direction: column;
-        row-gap: 5px;
+        align-items: center;
+        justify-content: center;
+        padding: 50px;
 
-        .card {
-            display: grid;
-            grid-template-columns: auto min-content;
-            column-gap: 10px;
+        &--text {
+            height: 84px;
+            width: 160px;
+            display: flex;
             align-items: center;
-            border: 1px solid white;
-            border-radius: 3px;
-            padding: 5px 10px;
-
-            .complete {
-                font-size: 0.8rem;
-                color: white;
-
-                .complete-icon:hover {
-                    color: rgb(152, 228, 152);
-                    cursor: pointer;
-                }
-            }
+            justify-content: center;
+            color: #fff;
+            background-color: #000;
         }
     }
 
