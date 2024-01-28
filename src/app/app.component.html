@@ -17,7 +17,7 @@
     </div>
 
     <!-- Preview -->
-    <div *ngIf="!isLoading" class="preview-pane">
+    <div *ngIf="!isLoading && title" class="preview-pane">
         <span id="thumbnail" #thumbnailRef class="preview-pane--text">
             {{ title }}
         </span>
