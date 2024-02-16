@@ -12,8 +12,8 @@ export class AppComponent {
     /** Reference to the thumbnail element */
     @ViewChild('thumbnailRef') thumbnailRef: ElementRef;
 
-    /** Thumbnail title to set preview */
-    title = '';
+    /** HTML input to create thumbnail with */
+    htmlInput = '';
 
     /** Whether UI should lock */
     isLoading = false;
@@ -27,7 +27,7 @@ export class AppComponent {
     constructor(private exportAsService: ExportAsService) {}
 
     /**
-     * Exports title as blog thumbnail
+     * Exports HTML as blog thumbnail
      */
     export(): void {
         this.isLoading = true;

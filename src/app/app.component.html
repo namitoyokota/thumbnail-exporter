@@ -8,8 +8,8 @@
 
 <!-- Main -->
 <div class="main-pane">
-    <!-- New Task -->
-    <mono-input placeholder="Add a new task" [text]="title" [dark]="true" (changed)="title = $event"></mono-input>
+    <!-- HTML -->
+    <mono-textarea placeholder="HTML" [text]="htmlInput" [dark]="true" (changed)="htmlInput = $event"></mono-textarea>
 
     <!-- Loading Indicator -->
     <div *ngIf="isLoading" class="loading-pane">
@@ -17,14 +17,13 @@
     </div>
 
     <!-- Preview -->
-    <div *ngIf="!isLoading && title" class="preview-pane">
-        <span id="thumbnail" #thumbnailRef class="preview-pane--text">
-            {{ title }}
+    <div *ngIf="!isLoading && htmlInput" class="preview-pane">
+        <span id="thumbnail" #thumbnailRef class="preview-pane--text" [innerHTML]="htmlInput">
         </span>
     </div>
 
     <!-- Export -->
-    <mono-button text="Export" [dark]="true" [disabled]="!title.length" (clicked)="export()"></mono-button>
+    <mono-button text="Export" [dark]="true" [disabled]="!htmlInput.length" (clicked)="export()"></mono-button>
 
     <!-- Codebase Link -->
     <div class="codebase-pane">
