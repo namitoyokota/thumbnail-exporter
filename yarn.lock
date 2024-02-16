@@ -3071,9 +3071,9 @@ ee-first@1.1.1:
   integrity sha512-WMwm9LhRUo+WUaRN+vRuETqG89IgZphVSNkdFgeb6sS/E4OrDIN7t48CAewSHXc6C8lefD8KKfr5vY61brQlow==
 
 electron-to-chromium@^1.4.284, electron-to-chromium@^1.4.668:
-  version "1.4.672"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.672.tgz#f8ce803b43898b7e91dcfcf70d6fd656b11a645d"
-  integrity sha512-YYCy+goe3UqZqa3MOQCI5Mx/6HdBLzXL/mkbGCEWL3sP3Z1BP9zqAzeD3YEmLZlespYGFtyM8tRp5i2vfaUGCA==
+  version "1.4.673"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.673.tgz#1f077d9a095761804aec7ec6346c3f4b69b56534"
+  integrity sha512-zjqzx4N7xGdl5468G+vcgzDhaHkaYgVcf9MqgexcTqsl2UHSCmOj/Bi3HAprg4BZCpC7HyD8a6nZl6QAZf72gw==
 
 emoji-regex@^8.0.0:
   version "8.0.0"
@@ -4932,10 +4932,10 @@ ngx-export-as@^1.16.0:
     tslib "^2.5.2"
     xlsx "^0.18.5"
 
-ngx-monochrome@^0.1.9:
-  version "0.1.9"
-  resolved "https://registry.yarnpkg.com/ngx-monochrome/-/ngx-monochrome-0.1.9.tgz#09e6db46602ae008cf4f83c1825175744baf1f08"
-  integrity sha512-bNyZnfTkZRWAPpmlBsTBty9De9w9+ovIwqJpI17nAKl0cLYI4KyVk9G7Ymwhs2Ve0EaPFzFKTGA+j0YfXUedqQ==
+ngx-monochrome@^0.1.10:
+  version "0.1.10"
+  resolved "https://registry.yarnpkg.com/ngx-monochrome/-/ngx-monochrome-0.1.10.tgz#3f495b5917a8a9594482e9045760e0ce56882fde"
+  integrity sha512-XR40e6YQ9P6mrjvuo+qCgB5TTcvn1+QaaSChKGwUAU3Vj5jumlooKKxp7yNOEhQIULHaeyL9htd72OLr7C4XvA==
   dependencies:
     tslib "^2.3.0"
 
