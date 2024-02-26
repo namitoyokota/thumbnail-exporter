@@ -41,6 +41,7 @@
         align-items: center;
         justify-content: center;
         border: 1px solid white;
+        padding: 50px;
 
         &--text {
             font-family: Geist;
@@ -50,7 +51,6 @@
             color: #fff;
             font-size: 30px;
             background-color: #000;
-            padding: 10%;
         }
     }
 
